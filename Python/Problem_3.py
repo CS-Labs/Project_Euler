@@ -13,7 +13,7 @@ def problemThree():
                 terminate = True
             else:
                 terminate = True
-        if(n%testDivisor==0and(not(terminate))):
+        if(n%testDivisor==0 and(not(terminate))):
             primeFactors.append(testDivisor)
             remainder = n%testDivisor
             n /= testDivisor
@@ -27,4 +27,4 @@ def problemThree():
         if(pf>max):
             max=pf
     return max
-print (problemThree())
+print (int(problemThree()))
