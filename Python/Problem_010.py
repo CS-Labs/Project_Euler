@@ -1,4 +1,5 @@
 import math
+# Author: Christian Seely
 
 # Method to find the primes from 2 to 2,000,000
 # using the Sieve of Eratosthenes algorithm and then
