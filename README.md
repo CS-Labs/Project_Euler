@@ -6,15 +6,15 @@ Current languages: Java, Python, C++
 
 Future languages: C, Haskell, Javascript, (more to be added.)
 
-Total number of problems solved: **0**
+Total number of problems solved: **10**
 
 Number of problems solved in various languages: 
 
-Python: **0**
+Python: **10**
 
-Java:     **0** 
+Java:     **3** 
 
-C++       **0** 
+C++       **3** 
 
 
     **Copyright (C) {2016}  {Christian Seely} <cseely@unm.edu>**
