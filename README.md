@@ -12,7 +12,7 @@ Number of problems solved in various languages:
 
 Python: **13**
 
-Java:     **4** 
+Java:     **5** 
 
 C++       **3** 
 
