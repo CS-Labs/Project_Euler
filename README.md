@@ -6,11 +6,11 @@ Current languages: Java, Python, C++
 
 Future languages: C, Haskell, Javascript, (more to be added.)
 
-Total number of problems solved: **13**
+Total number of problems solved: **14**
 
 Number of problems solved in various languages: 
 
-Python: **13**
+Python: **14**
 
 Java:     **5** 
 
