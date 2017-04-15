@@ -4,7 +4,7 @@ This repository contains my solutions to various Project Euler problems in a var
 
 Disclaimer: I solve these problems to learn new languages for fun so my answers might not always follow the best practices of the languages I am writting. 
 
-Current languages: Java, Python, C++
+Current languages: Java, Python, C++, Haskell, Racket
 
 Total number of problems solved: **14**
 
