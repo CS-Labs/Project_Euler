@@ -4,7 +4,7 @@ This repository contains my solutions to various Project Euler problems in a var
 
 Disclaimer: I solve these problems to learn new languages for fun so my answers might not always follow the best practices of the languages I am writting. 
 
-Current languages: Java, Python, C++, Haskell, Racket, C
+Current languages: Java, Python, C++, Haskell, Racket, C, Bash, Windows Power Shell, JavaScript, Ruby, PHP, Perl, Rust, Go, Scala, Swift, Clojure. 
 
 Total number of problems solved: **14**
 
@@ -21,6 +21,29 @@ Haskell:   **1**
 Racket:    **1**
 
 C:         **1**
+
+Bash:      **1**
+
+Windows Power Shell **1**
+
+JavaScript **1**
+
+Ruby **1**
+
+PHP **1**
+
+Perl **1**
+
+Rust **1**
+
+Go **1**
+
+Scala **1**
+
+Swift **1**
+
+Clojure **1**
+
 
     **Copyright (C) {2016}  {Christian Seely} <cseely@unm.edu>**
 
