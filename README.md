@@ -2,19 +2,23 @@
 
 This repository contains my solutions to various Project Euler problems in a variety of different languages.
 
-Current languages: Java, Python, C++
+Disclaimer: I solve these problems to learn new languages for fun so my answers might not always follow the best practices of the languages I am writting. 
 
-Future languages: C, Haskell, Javascript, (more to be added.)
+Current languages: Java, Python, C++
 
 Total number of problems solved: **14**
 
 Number of problems solved in various languages: 
 
-Python: **14**
+Python:    **14**
 
-Java:     **5** 
+Java:      **5** 
 
-C++       **3** 
+C++:       **3** 
+
+Haskell:   **1**
+
+Racket:    **1**
 
 
     **Copyright (C) {2016}  {Christian Seely} <cseely@unm.edu>**
