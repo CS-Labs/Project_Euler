@@ -6,28 +6,19 @@ Disclaimer: I solve these problems to learn new languages for fun so my answers 
 
 Note: Other non-featured languages are included in the 'Others' folder.
 
-Current languages: C++, Haskell, Go, Java, JavaScript, Python, Rust. 
+Current languages: C++, Haskell, Java, Python.
 
 Total number of problems solved: **14**
 
 Number of problems solved in various languages: 
 
-Python:    **14**
+Python:    **19**
 
 Java:      **5** 
 
 C++:       **3** 
 
 Haskell:   **1**
-
-JavaScript **1**
-
-Rust **1**
-
-Go **1**
-
-Scala **1**
-
 
 
     **Copyright (C) {2016}  {Christian Seely} <cseely@unm.edu>**
