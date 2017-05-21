@@ -8,7 +8,7 @@ Note: Other non-featured languages are included in the 'Others' folder.
 
 Current languages: C++, Haskell, Java, Python.
 
-Total number of problems solved: **14**
+Total number of problems solved: **19**
 
 Number of problems solved in various languages: 
 
