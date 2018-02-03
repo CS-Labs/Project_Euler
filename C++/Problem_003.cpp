@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include <iostream>
 #include <vector>
-int main()
+
+
+long problemThree()
 {
 	long max = 0;
 	long long n = 600851475143;
@@ -38,7 +40,14 @@ int main()
 	{
 		if (pf > max) max = pf;
 	}
-	std::cout << max;
-    return 0;
+
+	return max;
+}
+
+
+int main()
+{
+	std::cout << problemThree() << std::endl;
+	return 0;
 }
 

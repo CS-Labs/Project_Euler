@@ -1,7 +1,9 @@
 #include "stdafx.h"
 #include <iostream>
 /*Author: Christian Seely*/
-int main()
+
+
+int problemTwo()
 {
 	int i = 1;
 	int j = 2;
@@ -17,7 +19,12 @@ int main()
 		j = k;
 		i = temp;
 	}
-	std::cout << sum;
-    return 0;
+	return sum;
+}
+
+int main()
+{
+	std::cout << problemTwo() << std::endl;
+	return 0;
 }
 
