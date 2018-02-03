@@ -75,7 +75,7 @@ int problemFour()
 {
 	std::vector<int> singles(900); 
 	std::iota(singles.begin(), singles.end(), 100); // 100 to 999.
-    PalindromicMultipleFactory pmFactory{ singles };
+	PalindromicMultipleFactory pmFactory{ singles };
 	std::vector<int> palindromicMultiples = pmFactory.getPalindromicMultiples();
 	auto max =  std::max_element(palindromicMultiples.begin(), palindromicMultiples.end());
 	return *max; // Get value by dereferencing iterator. 
