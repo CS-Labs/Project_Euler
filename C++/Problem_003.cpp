@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <vector>
-
+/*Author: Christian Seely*/
 
 long problemThree()
 {
