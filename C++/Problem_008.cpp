@@ -38,24 +38,24 @@ std::string n = "73167176531330624919225119674426574742355349194934\
 */
 long long  problemEight()
 {
-	int nAdjacent = 13;
-	int nPairings = n.length() - nAdjacent;
-	long long max = 0;
-	long long  sum;
-	for (int i = 0; i < nPairings; i++)
-	{
-		sum = 1;
-		for (int j = 0; j < nAdjacent; j++) sum *= (n.at(j + i) - '0');
-		if (sum > max) max = sum;
-		std::cout << max << std::endl;
-	}
-	return max;
+  int nAdjacent = 13;
+  int nPairings = n.length() - nAdjacent;
+  long long max = 0;
+  long long  sum;
+  for (int i = 0; i < nPairings; i++)
+  {
+    sum = 1;
+    for (int j = 0; j < nAdjacent; j++) sum *= (n.at(j + i) - '0');
+    if (sum > max) max = sum;
+    std::cout << max << std::endl;
+  }
+  return max;
 }
 
 
 int main()
 {
-	std::cout << problemEight() << std::endl;
-	return 0;
+  std::cout << problemEight() << std::endl;
+  return 0;
 }
 

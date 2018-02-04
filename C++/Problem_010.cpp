@@ -14,40 +14,40 @@
 */
 long long problemTen()
 {
-	int scope = 2000000;
-	// The index in the array represents a natural number.
+  int scope = 2000000;
+  // The index in the array represents a natural number.
     // The possible values at each index have the following meaning :
-	// 1 = Prime, 0 = Not prime.
-	std::vector<int> n(scope, 1);
-	int bound = std::sqrt(n.size());
-	int j, k;
-	for (int i = 2; i < bound; i++)
-	{
-		if (n[i] == 1)
-		{
-			j = (i*i);
-			k = 1;
-			while (j < scope)
-			{
-				n[j] = 0;
-				j = (i*i) + (k*i);
-				k += 1;
-			}
-		}
-	}
-	long long sum = 0;
-	// Sum all the primes. 
-	for (int i = 2; i < scope; i++)
-	{
-		if (n[i]) sum += i;
-	}
-	return sum;
+  // 1 = Prime, 0 = Not prime.
+  std::vector<int> n(scope, 1);
+  int bound = std::sqrt(n.size());
+  int j, k;
+  for (int i = 2; i < bound; i++)
+  {
+    if (n[i] == 1)
+    {
+      j = (i*i);
+      k = 1;
+      while (j < scope)
+      {
+        n[j] = 0;
+        j = (i*i) + (k*i);
+        k += 1;
+      }
+    }
+  }
+  long long sum = 0;
+  // Sum all the primes. 
+  for (int i = 2; i < scope; i++)
+  {
+    if (n[i]) sum += i;
+  }
+  return sum;
 }
 
 
 int main()
 {
-	std::cout << problemTen() << std::endl;
-	return 0;
+  std::cout << problemTen() << std::endl;
+  return 0;
 }
 

@@ -33,16 +33,16 @@ std::string n = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08\
 class Node
 {
 public:
-	Node(int x, int y, std::vector<long> nProds) : x{ x }, y{ y }, nProds{ nProds } { setMax(); };
+  Node(int x, int y, std::vector<long> nProds) : x{ x }, y{ y }, nProds{ nProds } { setMax(); };
 
-	void setMax() { max = *std::max_element(nProds.begin(), nProds.end()); }
-	const long getMax() const { return  max; }
+  void setMax() { max = *std::max_element(nProds.begin(), nProds.end()); }
+  const long getMax() const { return  max; }
 
 private:
-	int x;
-	int y;
-	long max;
-	std::vector<long> nProds; // E,W,N,S,NE,SW,SE,NW
+  int x;
+  int y;
+  long max;
+  std::vector<long> nProds; // E,W,N,S,NE,SW,SE,NW
 
 };
 
@@ -50,73 +50,73 @@ private:
 class Graph
 {
 public:
-	Graph(std::vector<Node> nodes) : nodes{ nodes } {};
-	long getMax() { return (std::max_element(nodes.begin(), nodes.end(), [](Node& n1, Node& n2) {return n1.getMax() < n2.getMax();}))->getMax(); }
+  Graph(std::vector<Node> nodes) : nodes{ nodes } {};
+  long getMax() { return (std::max_element(nodes.begin(), nodes.end(), [](Node& n1, Node& n2) {return n1.getMax() < n2.getMax();}))->getMax(); }
 private:
-	std::vector<Node> nodes;
+  std::vector<Node> nodes;
 };
 
 class NodeFactory
 {
 public:
 
-	static bool const inBounds(int n1, int n2, int n3)
-	{
-		return (n1 < 20 && n2 < 20 && n3 < 20 && n1 >= 0 && n2 >= 0 && n3 >= 0) ? true : false;
-	}
+  static bool const inBounds(int n1, int n2, int n3)
+  {
+    return (n1 < 20 && n2 < 20 && n3 < 20 && n1 >= 0 && n2 >= 0 && n3 >= 0) ? true : false;
+  }
 
-	static std::vector<Node> const buildNodes()
-	{
-		std::vector<Node> nodes;
-		// Split with space being the delimiter. 
-		std::istringstream iss(n);
-		std::vector<std::string> values((std::istream_iterator<std::string>(iss)), std::istream_iterator<std::string>());
-		std::vector<std::vector<int>> m;
-		// Convert the input vector into a 20x20 matrix. 
-		for (int i = 0; i < 20; i++)
-		{
-			std::vector<int> row;
-			for (int j = 0; j < 20; j++)
-			{
-				row.push_back(std::stoi(values[(i * 20) + j]));
-			}
-			m.push_back(row);
-		}
-		// Iterate through each element and check the product of adjacent numbers in the eight directions. 
-		for (int i = 0; i < 20; i++)
-		{
+  static std::vector<Node> const buildNodes()
+  {
+    std::vector<Node> nodes;
+    // Split with space being the delimiter. 
+    std::istringstream iss(n);
+    std::vector<std::string> values((std::istream_iterator<std::string>(iss)), std::istream_iterator<std::string>());
+    std::vector<std::vector<int>> m;
+    // Convert the input vector into a 20x20 matrix. 
+    for (int i = 0; i < 20; i++)
+    {
+      std::vector<int> row;
+      for (int j = 0; j < 20; j++)
+      {
+        row.push_back(std::stoi(values[(i * 20) + j]));
+      }
+      m.push_back(row);
+    }
+    // Iterate through each element and check the product of adjacent numbers in the eight directions. 
+    for (int i = 0; i < 20; i++)
+    {
 
-			for (int j = 0; j < 20; j++)
-			{
-				std::vector<long> nProds(8, 0);
-				if (inBounds(j + 1, j + 2, j + 3)) nProds[0] = m[i][j] * m[i][j + 1] * m[i][j + 2] * m[i][j + 3];
-				if (inBounds(j - 1, j - 2, j - 3)) nProds[1] = m[i][j] * m[i][j - 1] * m[i][j - 2] * m[i][j - 3];
-				if (inBounds(i + 1, i + 2, i + 3)) nProds[2] = m[i][j] * m[i + 1][j] * m[i + 2][j] * m[i + 3][j];
-				if (inBounds(i - 1, i - 2, i - 3)) nProds[3] = m[i][j] * m[i - 1][j] * m[i - 2][j] * m[i - 3][j];
-				if (inBounds(i + 1, i + 2, i + 3) && inBounds(j + 1, j + 2, j + 3)) nProds[4] = m[i][j] * m[i + 1][j + 1] * m[i + 2][j + 2] * m[i + 3][j + 3];
-				if (inBounds(i - 1, i - 2, i - 3) && inBounds(j - 1, j - 2, j - 3)) nProds[5] = m[i][j] * m[i - 1][j - 1] * m[i - 2][j - 2] * m[i - 3][j - 3];
-				if (inBounds(i - 1, i - 2, i - 3) && inBounds(j + 1, j + 2, j + 3)) nProds[6] = m[i][j] * m[i - 1][j + 1] * m[i - 2][j + 2] * m[i - 3][j + 3];
-				if (inBounds(i + 1, i + 2, i + 3) && inBounds(j - 1, j - 2, j - 3)) nProds[7] = m[i][j] * m[i + 1][j - 1] * m[i + 2][j - 2] * m[i + 3][j - 3];
+      for (int j = 0; j < 20; j++)
+      {
+        std::vector<long> nProds(8, 0);
+        if (inBounds(j + 1, j + 2, j + 3)) nProds[0] = m[i][j] * m[i][j + 1] * m[i][j + 2] * m[i][j + 3];
+        if (inBounds(j - 1, j - 2, j - 3)) nProds[1] = m[i][j] * m[i][j - 1] * m[i][j - 2] * m[i][j - 3];
+        if (inBounds(i + 1, i + 2, i + 3)) nProds[2] = m[i][j] * m[i + 1][j] * m[i + 2][j] * m[i + 3][j];
+        if (inBounds(i - 1, i - 2, i - 3)) nProds[3] = m[i][j] * m[i - 1][j] * m[i - 2][j] * m[i - 3][j];
+        if (inBounds(i + 1, i + 2, i + 3) && inBounds(j + 1, j + 2, j + 3)) nProds[4] = m[i][j] * m[i + 1][j + 1] * m[i + 2][j + 2] * m[i + 3][j + 3];
+        if (inBounds(i - 1, i - 2, i - 3) && inBounds(j - 1, j - 2, j - 3)) nProds[5] = m[i][j] * m[i - 1][j - 1] * m[i - 2][j - 2] * m[i - 3][j - 3];
+        if (inBounds(i - 1, i - 2, i - 3) && inBounds(j + 1, j + 2, j + 3)) nProds[6] = m[i][j] * m[i - 1][j + 1] * m[i - 2][j + 2] * m[i - 3][j + 3];
+        if (inBounds(i + 1, i + 2, i + 3) && inBounds(j - 1, j - 2, j - 3)) nProds[7] = m[i][j] * m[i + 1][j - 1] * m[i + 2][j - 2] * m[i + 3][j - 3];
 
-				nodes.push_back(Node{ i, j, nProds });
-			}
+        nodes.push_back(Node{ i, j, nProds });
+      }
 
-		}
+    }
 
-		return nodes;
-	}
+    return nodes;
+  }
 };
 
 
 long problemEleven()
 {
-	Graph g{ NodeFactory::buildNodes() };
-	return g.getMax();
+  Graph g{ NodeFactory::buildNodes() };
+  return g.getMax();
 }
 
 int main()
 {
-	std::cout << problemEleven() << std::endl;
-	return 0;
+  std::cout << problemEleven() << std::endl;
+  return 0;
 }
 

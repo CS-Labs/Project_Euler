@@ -22,34 +22,34 @@
 */
 std::tuple<bool,int> euclidsFormulaHelper(int i, int j)
 {
-	int a = (i*i) - (j*j);
-	int b = 2 * i*j;
-	int c = (i*i) + (j*j);
-	if (a + b + c == 1000) return std::make_tuple(true, a*b*c);
-	else return std::make_tuple(false, 0);
+  int a = (i*i) - (j*j);
+  int b = 2 * i*j;
+  int c = (i*i) + (j*j);
+  if (a + b + c == 1000) return std::make_tuple(true, a*b*c);
+  else return std::make_tuple(false, 0);
 }
 
 int problemNine()
 {
-	int ans;
-	bool e; 
-	for (int i = 0; i < 1000; i++)
-	{
-		for (int j = 0; j < 1000; j++)
-		{
-			if (i > j)
-			{
-				std::tie(e, ans) = euclidsFormulaHelper(i, j);
-				if (e) return ans;
-			}
-		}
-	}
+  int ans;
+  bool e; 
+  for (int i = 0; i < 1000; i++)
+  {
+    for (int j = 0; j < 1000; j++)
+    {
+      if (i > j)
+      {
+        std::tie(e, ans) = euclidsFormulaHelper(i, j);
+        if (e) return ans;
+      }
+    }
+  }
 }
 
 
 int main()
 {
-	std::cout << problemNine() << std::endl;
-	return 0;
+  std::cout << problemNine() << std::endl;
+  return 0;
 }
 
