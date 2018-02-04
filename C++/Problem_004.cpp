@@ -85,6 +85,7 @@ int problemFour()
 int main()
 {
 	std::cout << problemFour() << std::endl;
+	
 	return 0;
 }
 
