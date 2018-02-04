@@ -51,7 +51,7 @@ class Graph
 {
 public:
 	Graph(std::vector<Node> nodes) : nodes{ nodes } {};
-	const long getMax() { return (std::max_element(nodes.begin(), nodes.end(), [](Node& n1, Node& n2) {return n1.getMax() < n2.getMax();}))->getMax(); }
+	long getMax() { return (std::max_element(nodes.begin(), nodes.end(), [](Node& n1, Node& n2) {return n1.getMax() < n2.getMax();}))->getMax(); }
 private:
 	std::vector<Node> nodes;
 };
@@ -60,12 +60,12 @@ class NodeFactory
 {
 public:
 
-	const static bool inBounds(int n1, int n2, int n3)
+	static bool const inBounds(int n1, int n2, int n3)
 	{
 		return (n1 < 20 && n2 < 20 && n3 < 20 && n1 >= 0 && n2 >= 0 && n3 >= 0) ? true : false;
 	}
 
-	const static std::vector<Node> buildNodes()
+	static std::vector<Node> const buildNodes()
 	{
 		std::vector<Node> nodes;
 		// Split with space being the delimiter. 
@@ -85,7 +85,7 @@ public:
 		// Iterate through each element and check the product of adjacent numbers in the eight directions. 
 		for (int i = 0; i < 20; i++)
 		{
-			
+
 			for (int j = 0; j < 20; j++)
 			{
 				std::vector<long> nProds(8, 0);
@@ -94,13 +94,13 @@ public:
 				if (inBounds(i + 1, i + 2, i + 3)) nProds[2] = m[i][j] * m[i + 1][j] * m[i + 2][j] * m[i + 3][j];
 				if (inBounds(i - 1, i - 2, i - 3)) nProds[3] = m[i][j] * m[i - 1][j] * m[i - 2][j] * m[i - 3][j];
 				if (inBounds(i + 1, i + 2, i + 3) && inBounds(j + 1, j + 2, j + 3)) nProds[4] = m[i][j] * m[i + 1][j + 1] * m[i + 2][j + 2] * m[i + 3][j + 3];
-				if (inBounds(i - 1, i - 2, i - 3)&& inBounds(j - 1, j - 2, j - 3)) nProds[5] = m[i][j] * m[i - 1][j - 1] * m[i - 2][j - 2] * m[i - 3][j - 3];
-				if (inBounds(i - 1, i - 2, i - 3)&& inBounds(j + 1, j + 2, j + 3)) nProds[6] = m[i][j] * m[i - 1][j + 1] * m[i - 2][j + 2] * m[i - 3][j + 3];
-				if (inBounds(i + 1, i + 2, i + 3)&& inBounds(j - 1, j - 2, j - 3)) nProds[7] = m[i][j] * m[i + 1][j - 1] * m[i + 2][j - 2] * m[i + 3][j - 3];
+				if (inBounds(i - 1, i - 2, i - 3) && inBounds(j - 1, j - 2, j - 3)) nProds[5] = m[i][j] * m[i - 1][j - 1] * m[i - 2][j - 2] * m[i - 3][j - 3];
+				if (inBounds(i - 1, i - 2, i - 3) && inBounds(j + 1, j + 2, j + 3)) nProds[6] = m[i][j] * m[i - 1][j + 1] * m[i - 2][j + 2] * m[i - 3][j + 3];
+				if (inBounds(i + 1, i + 2, i + 3) && inBounds(j - 1, j - 2, j - 3)) nProds[7] = m[i][j] * m[i + 1][j - 1] * m[i + 2][j - 2] * m[i + 3][j - 3];
 
 				nodes.push_back(Node{ i, j, nProds });
 			}
-			
+
 		}
 
 		return nodes;
