@@ -1,6 +1,6 @@
 **Author: Christian Seely**
 
-This repository contains my solutions to various Project Euler problems in a variety of different languages.
+This repository contains my solutions to various Project Euler problems in a variety of different programming languages.
 
 Disclaimer: I solve these problems to learn new languages for fun so my answers might not always follow the best practices of the languages I am writting. 
 
