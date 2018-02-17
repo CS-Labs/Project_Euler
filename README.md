@@ -14,9 +14,9 @@ Number of problems solved in various languages:
 
 Python:    **19**
 
-Java:      **5** 
+C++:       **12** 
 
-C++:       **3** 
+Java:      **5** 
 
 Haskell:   **1**
 
