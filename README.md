@@ -1,6 +1,6 @@
 **Author: Christian Seely**
 
-This repository contains my solutions to various Project Euler problems in a variety of different languages.
+This repository contains my solutions to various Project Euler problems in a variety of different programming languages.
 
 Disclaimer: I solve these problems to learn new languages for fun so my answers might not always follow the best practices of the languages I am writting. 
 
@@ -14,9 +14,9 @@ Number of problems solved in various languages:
 
 Python:    **19**
 
-Java:      **5** 
+C++:       **12** 
 
-C++:       **3** 
+Java:      **5** 
 
 Haskell:   **1**
 
