@@ -33,16 +33,16 @@ std::string n = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08\
 class Node
 {
 public:
-  Node(int x, int y, std::vector<long> nProds) : x{ x }, y{ y }, nProds{ nProds } { setMax(); };
+  Node(int x, int y, std::vector<long> nProds) : m_X{ x }, m_Y{ y }, m_nProds{ nProds } { setMax(); };
 
-  void setMax() { max = *std::max_element(nProds.begin(), nProds.end()); }
-  const long getMax() const { return  max; }
+  void setMax() { m_Max = *std::max_element(m_nProds.begin(), m_nProds.end()); }
+  const long getMax() const { return  m_Max; }
 
 private:
-  int x;
-  int y;
-  long max;
-  std::vector<long> nProds; // E,W,N,S,NE,SW,SE,NW
+  int m_X;
+  int m_Y;
+  long m_Max;
+  std::vector<long> m_nProds; // E,W,N,S,NE,SW,SE,NW
 
 };
 
