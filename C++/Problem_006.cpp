@@ -8,17 +8,17 @@
 /*Author: Christian Seely*/
 
 
-long sumOfSquares(int n)
+long sumOfSquares(int t_n)
 {
-  std::vector<int> range(n);
+  std::vector<int> range(t_n);
   std::iota(range.begin(), range.end(), 0);
   for (auto &v : range) v *= v;
   return std::accumulate(range.begin(), range.end(), 0);
 }
 
-long squareOfSum(int n)
+long squareOfSum(int t_n)
 {
-  std::vector<int> range(n);
+  std::vector<int> range(t_n);
   std::iota(range.begin(), range.end(), 0);
   return std::pow(std::accumulate(range.begin(), range.end(),0),2);
 }

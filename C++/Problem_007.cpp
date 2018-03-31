@@ -4,16 +4,15 @@
 #include <vector>
 #include <numeric>
 #include <math.h>
-#include <execution>
 
 /*Author: Christian Seely*/
 
-bool isPrime(int n)
+bool isPrime(int t_n)
 {
   int div = 2;
-  while (div <= std::sqrt(n))
+  while (div <= std::sqrt(t_n))
   {
-    if (n%div == 0) return false;
+    if (t_n%div == 0) return false;
     div += 1;
   }
   return true;

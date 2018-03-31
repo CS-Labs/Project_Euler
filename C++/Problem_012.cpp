@@ -6,13 +6,13 @@
 
 /*Author: Christian Seely*/
 
-long getNumFactors(int n)
+long getNumFactors(int t_n)
 {
   long nFactors = 0;
-  double bound = std::sqrt(n) + 1;
+  double bound = std::sqrt(t_n) + 1;
   for (int i = 1; i < bound; i++)
   {
-    if (n%i == 0) nFactors += 1;
+    if (t_n%i == 0) nFactors += 1;
   }
   return (nFactors * 2);
 }

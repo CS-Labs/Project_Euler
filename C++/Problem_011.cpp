@@ -50,22 +50,17 @@ private:
 class Graph
 {
 public:
-  Graph(std::vector<Node> nodes) : nodes{ nodes } {};
-  long getMax() { return (std::max_element(nodes.begin(), nodes.end(), [](Node& n1, Node& n2) {return n1.getMax() < n2.getMax();}))->getMax(); }
+  Graph() : m_Nodes{ m_buildNodes() } {};
+  long getMax() { return (std::max_element(m_Nodes.begin(), m_Nodes.end(), [](Node& n1, Node& n2) {return n1.getMax() < n2.getMax();}))->getMax(); }
 private:
-  std::vector<Node> nodes;
-};
+  std::vector<Node> m_Nodes;
 
-class NodeFactory
-{
-public:
-
-  static bool const inBounds(int n1, int n2, int n3)
+  bool const m_InBounds(int t_n1, int t_n2, int t_n3)
   {
-    return (n1 < 20 && n2 < 20 && n3 < 20 && n1 >= 0 && n2 >= 0 && n3 >= 0) ? true : false;
+    return (t_n1 < 20 && t_n2 < 20 && t_n3 < 20 && t_n1 >= 0 && t_n2 >= 0 && t_n3 >= 0) ? true : false;
   }
 
-  static std::vector<Node> const buildNodes()
+  std::vector<Node> m_buildNodes()
   {
     std::vector<Node> nodes;
     // Split with space being the delimiter. 
@@ -89,14 +84,14 @@ public:
       for (int j = 0; j < 20; j++)
       {
         std::vector<long> nProds(8, 0);
-        if (inBounds(j + 1, j + 2, j + 3)) nProds[0] = m[i][j] * m[i][j + 1] * m[i][j + 2] * m[i][j + 3];
-        if (inBounds(j - 1, j - 2, j - 3)) nProds[1] = m[i][j] * m[i][j - 1] * m[i][j - 2] * m[i][j - 3];
-        if (inBounds(i + 1, i + 2, i + 3)) nProds[2] = m[i][j] * m[i + 1][j] * m[i + 2][j] * m[i + 3][j];
-        if (inBounds(i - 1, i - 2, i - 3)) nProds[3] = m[i][j] * m[i - 1][j] * m[i - 2][j] * m[i - 3][j];
-        if (inBounds(i + 1, i + 2, i + 3) && inBounds(j + 1, j + 2, j + 3)) nProds[4] = m[i][j] * m[i + 1][j + 1] * m[i + 2][j + 2] * m[i + 3][j + 3];
-        if (inBounds(i - 1, i - 2, i - 3) && inBounds(j - 1, j - 2, j - 3)) nProds[5] = m[i][j] * m[i - 1][j - 1] * m[i - 2][j - 2] * m[i - 3][j - 3];
-        if (inBounds(i - 1, i - 2, i - 3) && inBounds(j + 1, j + 2, j + 3)) nProds[6] = m[i][j] * m[i - 1][j + 1] * m[i - 2][j + 2] * m[i - 3][j + 3];
-        if (inBounds(i + 1, i + 2, i + 3) && inBounds(j - 1, j - 2, j - 3)) nProds[7] = m[i][j] * m[i + 1][j - 1] * m[i + 2][j - 2] * m[i + 3][j - 3];
+        if (m_InBounds(j + 1, j + 2, j + 3)) nProds[0] = m[i][j] * m[i][j + 1] * m[i][j + 2] * m[i][j + 3];
+        if (m_InBounds(j - 1, j - 2, j - 3)) nProds[1] = m[i][j] * m[i][j - 1] * m[i][j - 2] * m[i][j - 3];
+        if (m_InBounds(i + 1, i + 2, i + 3)) nProds[2] = m[i][j] * m[i + 1][j] * m[i + 2][j] * m[i + 3][j];
+        if (m_InBounds(i - 1, i - 2, i - 3)) nProds[3] = m[i][j] * m[i - 1][j] * m[i - 2][j] * m[i - 3][j];
+        if (m_InBounds(i + 1, i + 2, i + 3) && m_InBounds(j + 1, j + 2, j + 3)) nProds[4] = m[i][j] * m[i + 1][j + 1] * m[i + 2][j + 2] * m[i + 3][j + 3];
+        if (m_InBounds(i - 1, i - 2, i - 3) && m_InBounds(j - 1, j - 2, j - 3)) nProds[5] = m[i][j] * m[i - 1][j - 1] * m[i - 2][j - 2] * m[i - 3][j - 3];
+        if (m_InBounds(i - 1, i - 2, i - 3) && m_InBounds(j + 1, j + 2, j + 3)) nProds[6] = m[i][j] * m[i - 1][j + 1] * m[i - 2][j + 2] * m[i - 3][j + 3];
+        if (m_InBounds(i + 1, i + 2, i + 3) && m_InBounds(j - 1, j - 2, j - 3)) nProds[7] = m[i][j] * m[i + 1][j - 1] * m[i + 2][j - 2] * m[i + 3][j - 3];
 
         nodes.push_back(Node{ i, j, nProds });
       }
@@ -110,7 +105,7 @@ public:
 
 long problemEleven()
 {
-  Graph g{ NodeFactory::buildNodes() };
+  Graph g{};
   return g.getMax();
 }
 

@@ -8,15 +8,14 @@
 /*Author: Christian Seely*/
 
 /*
- Method to find the primes from 2 to 2,000,000
- using the Sieve of Eratosthenes algorithm and then
- sum them all together.
+Method to find the sum of primes from 2 to 2,000,000
+using the Sieve of Eratosthenes algorithm.  
 */
 long long problemTen()
 {
   int scope = 2000000;
   // The index in the array represents a natural number.
-    // The possible values at each index have the following meaning :
+  // The possible values at each index have the following meaning :
   // 1 = Prime, 0 = Not prime.
   std::vector<int> n(scope, 1);
   int bound = std::sqrt(n.size());
