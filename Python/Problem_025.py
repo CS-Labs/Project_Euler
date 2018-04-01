@@ -3,13 +3,9 @@
 # Function that takes steps in the fib sequence acting
 # as an iterator.
 def fibStep():
-    x = 1
-    y = 1
-    i = 3 # We start by looking at the 3rd index in the sequence.
+    x, y , i = 1, 1, 3 # We start by looking at the 3rd index in the sequence.
     while True:
-        tmp = x + y
-        x = y
-        y = tmp
+        x, y = y, x + y
         yield x, y, i
         i += 1
 

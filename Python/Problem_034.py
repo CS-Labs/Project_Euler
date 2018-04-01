@@ -10,9 +10,7 @@ def problemThirtyFour():
         oNumToFact[i] = math.factorial(i)
 
     iTotalSum = 0
-    iUPPER_BOUND = math.factorial(9)*7 # Define an upper bound 9!*7
-
-    for i in range(10, iUPPER_BOUND):
+    for i in range(10, 100000): # Upper bound found through testing.
         nString = str(i)
         iSum = 0
         for c in nString:

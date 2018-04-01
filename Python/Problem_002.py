@@ -1,16 +1,13 @@
 # Author: Christian Seely
+
 def problemTwo():
-    i = 1
-    j = 2
-    sum = j
+    prev, curr, sum = 0, 1, 0
+    breakValue = 4000000
     while True:
-        k = i+j
-        if(k>4000000):
+        curr, prev = prev + curr, curr
+        if curr > breakValue:
             break
-        if(k%2==0):
-            sum+=k
-        temp = j
-        j = k
-        i = temp
+        if curr % 2 == 0:
+            sum += curr
     return sum
 print (problemTwo())

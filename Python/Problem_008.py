@@ -1,4 +1,7 @@
 # Author: Christian Seely
+
+from functools import reduce
+
 # The 1000 digit number..
 n = '73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
@@ -26,19 +29,13 @@ n = '73167176531330624919225119674426574742355349194934\
 # the digits with a scope of 13 where
 # with each iteration the outer bound of the scope
 # increase by one and the inner bound of the scope
-# decrease by one. With each iteration the values
-# in the scope are multiplied together.
+# decrease by one. With each outer iteration the values
+# in the scope are multiplied together and then the max
+# is found.
 def problemEight():
     nAdjacent = 13
-    nParings = len(n)-nAdjacent
-    max = 0
-    for i in range (nParings):
-        sum = 1
-        for j in range(nAdjacent):
-            sum *=int(n[j+i])
-        if(sum>max):
-            max=sum
-    return max
+    nParings = len(n) - nAdjacent
+    return max([reduce(lambda x, y: x * y, [int(n[j+i]) for j in range(nAdjacent)]) for i in range(nParings)])
 
 print (problemEight())
 

@@ -104,10 +104,7 @@ n = [37107287533902102798797998220837590246510135740250,
 
 # Sum all the elements in the list together.
 def problemThirteen():
-    sum = 0
-    for i in range(len(n)):
-        sum+=n[i]
     # Only return the first ten digits.
-    return (str(sum)[:10])
+    return str(sum(n))[:10]
 
 print (problemThirteen())

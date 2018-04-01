@@ -5,7 +5,7 @@ from math import sqrt
 def d(n):
     iSum = 1
     # We only need to go up to sqrt(n), the plus one is
-    # effectivly the ceiling.
+    # effectively the ceiling.
     for i in range(2, int(sqrt(n)) + 1):
         if n % i == 0:
             # Now add the pairing (i and n/i) to our sum.

@@ -1,5 +1,7 @@
 # Author: Christian Seely
+
 import functools as ft
+
 # Put the matrix as a single string.
 n = '08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08'\
 ' 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00'\
@@ -24,9 +26,9 @@ n = '08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08'\
 
 # Helper method to make sure the points n1, n2, and n3 are
 # in bounds of the matrix.
-def inBounds(n1,n2,n3):
+def inBounds(n1, n2, n3):
     return True if n1 < 20 and n2 <20 and n3 < 20 \
-        and n1 >=0 and n2 >= 0 and n3 >= 0 else False
+        and n1 >= 0 and n2 >= 0 and n3 >= 0 else False
 
 
 def problemEleven():
@@ -44,24 +46,24 @@ def problemEleven():
         for j in range(20):
             if inBounds(j+1, j+2, j+3):
                 right = ft.reduce(lambda x,y: x*y, m[i][j:j+4])
-            if inBounds(j-1,j-2,j-3):
+            if inBounds(j-1, j-2, j-3):
                 left = ft.reduce(lambda x,y: x*y, m[i][j-3:j+1])
-            if inBounds(i+1,i+2,i+3):
+            if inBounds(i+1, i+2, i+3):
                 up = m[i][j] * m[i + 1][j] * m[i + 2][j] * m[i + 3][j]
-            if inBounds(i-1,i-2,i-3):
+            if inBounds(i-1, i-2, i-3):
                 down = m[i][j] * m[i - 1][j] * m[i - 2][j] * m[i - 3][j]
             if inBounds(i+1, i+2, i+3) and inBounds(j+1, j+2, j+3):
                 NE = m[i][j] * m[i + 1][j + 1] * m[i + 2][j + 2] * m[i + 3][j + 3]
-            if inBounds(i-1, i-2,i-3) and inBounds(j-1,j-2,j-3):
+            if inBounds(i-1, i-2, i-3) and inBounds(j-1,j-2,j-3):
                 SW = m[i][j] * m[i - 1][j - 1] * m[i - 2][j - 2] * m[i - 3][j - 3]
-            if inBounds(i-1,i-2,i-3) and inBounds(j+1,j+2,j+3):
+            if inBounds(i-1, i-2, i-3) and inBounds(j+1,j+2,j+3):
                 SE = m[i][j] * m[i - 1][j + 1] * m[i - 2][j + 2] * m[i - 3][j + 3]
-            if inBounds(i+1,i+2,i+3) and inBounds(j-1,j-2,j-3):
+            if inBounds(i+1, i+2, i+3) and inBounds(j-1,j-2,j-3):
                 NW = m[i][j] * m[i + 1][j - 1] * m[i + 2][j - 2] * m[i + 3][j - 3]
-            high = max(high,right,left,up,down,NE,SE,SW,NW) # Update high if it has changed.
+            high = max(high, right, left, up, down, NE, SE, SW, NW) # Update high if it has changed.
     return high
 
-print (problemEleven())
+print(problemEleven())
 
 
 

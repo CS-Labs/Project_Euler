@@ -1,30 +1,22 @@
 # Author: Christian Seely
+
 def problemThree():
-    max = 0
+    max, div, remainder = 0, 2, 0
     n = 600851475143
-    primeFactors = []
-    testDivisor = 2
-    terminate = False
-    # Find prime factors of n.
-    while(not(terminate)):
-        if((testDivisor*testDivisor)>n):
-            if(n!=1):
-                primeFactors.append(n)
-                terminate = True
-            else:
-                terminate = True
-        if(n%testDivisor==0 and(not(terminate))):
-            primeFactors.append(testDivisor)
-            remainder = n%testDivisor
-            n /= testDivisor
-            if(remainder!=0):
-                testDivisor+=1
-            while(n%testDivisor==0 and (not(terminate))):
-                n /= testDivisor
-        testDivisor+=1
-    # Find largest prime factor in primeFactors.
-    for pf in primeFactors:
-        if(pf>max):
-            max=pf
-    return max
-print (int(problemThree()))
+    while True:
+        if (div*div) > n:
+            if n != 1 and n > max:
+                max = n
+                break
+        if n % div == 0:
+            if div > max:
+                max = div
+            n /= div
+        if not remainder:
+            div +=1
+        while not (n % div):
+            n /= div
+        div += 1
+    return int(max)
+
+print(problemThree())

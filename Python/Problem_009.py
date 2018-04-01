@@ -14,18 +14,18 @@ def euclidsFormulaHelper(i, j):
     a = (i*i)-(j*j)
     b = 2*i*j
     c = (i*i)+(j*j)
-    if(a+b+c==1000):
-        return (True,a*b*c)
+    if a + b + c == 1000:
+        return True, a * b *c
     else:
-        return (False,0)
+        return False, 0
 
 
 def problemNine():
-    for i in range (1000):
-        for j in range (1000):
-            if(i>j):
-                (exit,ans)=euclidsFormulaHelper(i,j)
-                if(exit):
+    for i in range(1000):
+        for j in range(1000):
+            if i > j:
+                (exit,ans) = euclidsFormulaHelper(i,j)
+                if exit :
                     return ans
 
 
