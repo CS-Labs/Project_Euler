@@ -10,4 +10,6 @@ def problemTwo():
         if curr % 2 == 0:
             sum += curr
     return sum
-print (problemTwo())
+
+if __name__ == '__main__':
+    print(problemTwo())

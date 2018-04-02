@@ -19,4 +19,5 @@ def problemSeven():
         i += 1
     return i-1
 
-print(problemSeven())
+if __name__ == '__main__':
+    print(problemSeven())

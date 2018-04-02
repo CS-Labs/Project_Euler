@@ -27,4 +27,5 @@ def problemTwentyOne():
     # Now return the sum of the amicable pairs.
     return sum(map(lambda x: x[0] + x[1], aAns))
 
-print(problemTwentyOne())
+if __name__ == '__main__':
+    print(problemTwentyOne())

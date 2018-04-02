@@ -11,4 +11,5 @@ def problemSeventeen():
     p = inflect.engine()
     return sum([len(re.sub('[-, ]', '', p.number_to_words(i))) for i in range(1, 1001)])
 
-print(problemSeventeen())
+if __name__ == '__main__':
+    print(problemSeventeen())

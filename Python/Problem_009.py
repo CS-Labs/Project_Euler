@@ -28,8 +28,8 @@ def problemNine():
                 if exit :
                     return ans
 
-
-print (problemNine())
+if __name__ == '__main__':
+    print(problemNine())
 
 
 

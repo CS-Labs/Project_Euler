@@ -6,4 +6,5 @@ def problemThirty():
     # equals i.
     return sum([i for i in range(2,295946) if sum(int(x)**5 for x in str(i)) == i])
 
-print(problemThirty())
+if __name__ == '__main__':
+    print(problemThirty())

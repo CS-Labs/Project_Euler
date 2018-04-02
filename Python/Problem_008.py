@@ -37,5 +37,6 @@ def problemEight():
     nParings = len(n) - nAdjacent
     return max([reduce(lambda x, y: x * y, [int(n[j+i]) for j in range(nAdjacent)]) for i in range(nParings)])
 
-print (problemEight())
+if __name__ == '__main__':
+    print(problemEight())
 

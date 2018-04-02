@@ -20,4 +20,5 @@ def solve(iXStart, iYStart):
 def problemFifteen():
     return solve(20,20)
 
-print(problemFifteen())
+if __name__ == '__main__':
+    print(problemFifteen())

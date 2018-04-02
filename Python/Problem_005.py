@@ -14,5 +14,7 @@ def lcm(a,b):
 def problemFive():
     return int(functools.reduce(lcm, range(1,21)))
 
-print (problemFive())
+
+if __name__ == '__main__':
+    print (problemFive())
 

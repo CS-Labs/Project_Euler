@@ -63,7 +63,8 @@ def problemEleven():
             high = max(high, right, left, up, down, NE, SE, SW, NW) # Update high if it has changed.
     return high
 
-print(problemEleven())
+if __name__ == '__main__':
+    print(problemEleven())
 
 
 

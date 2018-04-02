@@ -20,4 +20,5 @@ def problemThirtyFour():
 
     return iTotalSum
 
-print(problemThirtyFour())
+if __name__ == '__main__':
+    print(problemThirtyFour())

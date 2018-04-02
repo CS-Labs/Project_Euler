@@ -11,5 +11,5 @@ def problemNineteen():
                 iNumSundays += 1
     return iNumSundays
 
-
-print(problemNineteen())
+if __name__ == '__main__':
+    print(problemNineteen())

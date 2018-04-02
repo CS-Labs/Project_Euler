@@ -27,4 +27,5 @@ def problemTen():
             sum += i
     return sum
 
-print(problemTen())
+if __name__ == '__main__':
+    print(problemTen())

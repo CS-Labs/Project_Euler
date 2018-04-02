@@ -22,5 +22,6 @@ def problemTwelve():
             return sum
         i += 1
 
-print(problemTwelve())
+if __name__ == '__main__':
+    print(problemTwelve())
 

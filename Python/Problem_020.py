@@ -12,5 +12,5 @@ def factStep(x, y):
 def problemTwenty():
     return sum(map(lambda x: int(x), str(reduce(factStep, range(1,100)))))
 
-
-print(problemTwenty())
+if __name__ == '__main__':
+    print(problemTwenty())

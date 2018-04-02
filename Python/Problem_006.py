@@ -13,4 +13,5 @@ def squareOfSum(n):
 def problemSix():
     return squareOfSum(101)-sumOfSquares(101)
 
-print (problemSix())
+if __name__ == '__main__':
+    print (problemSix())

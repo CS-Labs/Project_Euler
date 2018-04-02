@@ -16,6 +16,7 @@ def problemFour():
             palindromicMultiples.append(multiple)
     return max(map(int,palindromicMultiples))
 
-print(problemFour())
+if __name__ == '__main__':
+    print(problemFour())
 
 

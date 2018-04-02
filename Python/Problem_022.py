@@ -17,4 +17,5 @@ def problemTwentyTwo():
 
     return iTotalScore
 
-print(problemTwentyTwo())
+if __name__ == '__main__':
+    print(problemTwentyTwo())

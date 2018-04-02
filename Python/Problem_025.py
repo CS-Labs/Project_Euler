@@ -15,4 +15,5 @@ def problemTwentyFive():
         if len(str(y)) >= 1000:
             return i  # Index i such that length of fibSequence(i) >= 1000.
 
-print(problemTwentyFive())
+if __name__ == '__main__':
+    print(problemTwentyFive())

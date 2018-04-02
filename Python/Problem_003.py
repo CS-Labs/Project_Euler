@@ -1,7 +1,7 @@
 # Author: Christian Seely
 
 def problemThree():
-    max, div, remainder = 0, 2, 0
+    max, div = 0, 2
     n = 600851475143
     while True:
         if (div*div) > n:
@@ -12,11 +12,10 @@ def problemThree():
             if div > max:
                 max = div
             n /= div
-        if not remainder:
-            div +=1
         while not (n % div):
             n /= div
         div += 1
     return int(max)
 
-print(problemThree())
+if __name__ == '__main__':
+    print(problemThree())

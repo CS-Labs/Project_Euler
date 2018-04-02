@@ -107,4 +107,5 @@ def problemThirteen():
     # Only return the first ten digits.
     return str(sum(n))[:10]
 
-print (problemThirteen())
+if __name__ == '__main__':
+    print(problemThirteen())

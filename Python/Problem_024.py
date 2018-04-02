@@ -8,4 +8,5 @@ def problemTwentyFour():
     # the iterator. Finally, consolidate the digits in the tuple into a string.
     return  "".join(d for d in next(itertools.islice(itertools.permutations("0123456789"), 999999, None)))
 
-print(problemTwentyFour())
+if __name__ == '__main__':
+    print(problemTwentyFour())

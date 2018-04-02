@@ -35,4 +35,6 @@ def createCollatzSequence(n):
 def problemFourteen():
     maxIndex, _ = max(enumerate([createCollatzSequence(i) for i in range(1,1000000)]), key=operator.itemgetter(1))
     return maxIndex + 1 # Account for result being zero-indexed.
-print(problemFourteen())
+
+if __name__ == '__main__':
+    print(problemFourteen())
