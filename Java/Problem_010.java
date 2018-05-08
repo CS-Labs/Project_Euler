@@ -7,7 +7,10 @@ import java.util.Collections;
  *
  */
 public class Problem_010 {
-
+    /*
+    Method to find the sum of primes from 2 to 2,000,000
+    using the Sieve of Eratosthenes algorithm.
+    */
     public static long problemTen(){
         int scope = 2_000_000;
         ArrayList<Integer> n = new ArrayList<>(Collections.nCopies(scope, 1));
