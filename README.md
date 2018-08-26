@@ -18,7 +18,7 @@ C++:       **12**
 
 Java:      **10** 
 
-Haskell:   **1**
+Haskell:   **10**
 
 
     **Copyright (C) {2016}  {Christian Seely} <cseely@unm.edu>**
